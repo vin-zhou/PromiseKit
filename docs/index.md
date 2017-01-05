@@ -150,6 +150,7 @@ firstly {
 }.then { dismissedButtonIndex in
     //… cancel wasn't pressed
 }.always {
+    // *still* runs if the promise was cancelled
     UIApplication.shared.networkActivityIndicatorVisible = false
 }.catch { error in
     //… cancel wasn't pressed
@@ -171,6 +172,18 @@ NSURLSession.shared.promise(url: myUrl).then { data in
     }
 }
 ```
+
+Cancelled promises are *still* rejected promises:
+
+```swift
+let p = Promise {
+    throw NSError.cancelledError()
+}
+assert(p.isRejected)
+assert(p.isCancelled)
+```
+
+---
 
 Because `then` is just a function you call on an object, you can call it multiple times:
 
