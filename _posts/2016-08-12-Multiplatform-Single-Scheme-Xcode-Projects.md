@@ -121,6 +121,14 @@ If you have an app, probably not, but if you have a framework, I think you shoul
 * [https://github.com/mxcl/OMGHTTPURLRQ](https://github.com/mxcl/OMGHTTPURLRQ)
 * [https://github.com/postmates/PMHTTP](https://github.com/postmates/PMHTTP)
 
+# Update 1
+
+Mike Weller of Bloomberg London wrote to me saying the following:
+
+> Hi there, RE: your article (which is great btw, we're now using this technique) - we ran into an issue with running `xcodebuild archive` on a project after adding one of these multi-platform frameworks as a build-from-source subproject. xcodebuild would fail with "The run destination My Mac is not valid for Archiving the scheme ..."
+
+> Seems xcodebuild gets confused about which platform to build for and in our case no longer defaulted to iOS. The fix for us was pretty simple: add `-destination generic/platform=iOS`. Thought you might want to know in case you ever update the article; might be worth mentioning the need for an explicit destination in some cases.
+
 
 [multischeme]: /public/img/news/multischeme.png
 [multiplatform]: /public/img/news/multiplatform.png
