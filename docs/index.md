@@ -145,7 +145,7 @@ firstly {
     let alert = UIAlertView()
     alert.addButton(title: "Proceed!")
     alert.addButton(title: "Proceed, but fastest!")
-    alert.cencelButtonIndex = alert.addButton("Cancel")
+    alert.cancelButtonIndex = alert.addButton("Cancel")
     return alert.promise()
 }.then { dismissedButtonIndex in
     //… cancel wasn't pressed
