@@ -72,7 +72,7 @@ PHPhotoLibrary.requestAuthorization().then { authorized -> Promise in
 Promises standardize the interfaces of asynchronicity; the take home is things that are tedious and flakey with completion-handlers are delightful with promises:
 
 ```swift
-let network = NSURLSession.GET(url)
+let network = URLSession.GET(url)
 let locater = CLLocationManager.promise()
 
 when(fulfilled: network, locater).then { data, location in
@@ -91,7 +91,7 @@ firstly {
     //NOTE: we _must_ remember to unset the activity indicator
     
 }.then { _ -> Promise in
-    let network = NSURLSession.GET(url)
+    let network = URLSession.GET(url)
     let locater = CLLocationManager.promise()    
     return when(fulfilled: network, locater)
 }.then { data, location -> Void in
@@ -162,8 +162,8 @@ The above works like you want, if the user presses the cancel button in the aler
 If you need to handle cancellation however, you can:
 
 ```swift
-NSURLSession.shared.promise(url: myUrl).then { data in
-    // NSURLSession can be cancelled via the `cancel` method
+URLSession.shared.promise(url: myUrl).then { data in
+    // URLSession can be cancelled via the `cancel` method
 }.catch(policy: .allErrors) { error in
     if error.isCancelledError {
         // something called “cancel” on the session object

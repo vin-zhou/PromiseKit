@@ -370,7 +370,7 @@ additional subspecs in your <code>Podfile</code>, eg:</p>
 </code></pre>
 <a href='#choose-your-networking-library' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='choose-your-networking-library'>Choose Your Networking Library</h2>
 
-<p><code>NSURLSession</code> is typically inadequate; choose from <a href="http://alamofire.org">Alamofire</a> or <a href="https://github.com/mxcl/OMGHTTPURLRQ">OMGHTTPURLRQ</a>:</p>
+<p><code>URLSession</code> is typically inadequate; choose from <a href="http://alamofire.org">Alamofire</a> or <a href="https://github.com/mxcl/OMGHTTPURLRQ">OMGHTTPURLRQ</a>:</p>
 <pre class="highlight swift"><code><span class="c1">// pod 'PromiseKit/Alamofire'  </span>
 <span class="kt">Alamofire</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="s">"http://example.com"</span><span class="p">,</span> <span class="nv">withMethod</span><span class="p">:</span> <span class="o">.</span><span class="kt">GET</span><span class="p">)</span><span class="o">.</span><span class="nf">responseJSON</span><span class="p">()</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">json</span> <span class="k">in</span>
     <span class="c1">//…</span>

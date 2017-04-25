@@ -185,9 +185,9 @@
     //…
 }.catch { error in
     switch error {
-    case NSURLError.NoConnection:
+    case URLError.notConnectedToInternet:
         //…
-    case CLError.NotAuthorized:
+    case CLError.denied:
         //…
     }
 }
@@ -460,21 +460,21 @@
 
 <p>Compare:</p>
 
-<pre class="highlight plaintext"><code>NSURLSession.GET(url1).then {
-    NSURLSession.GET(url2)
+<pre class="highlight plaintext"><code>URLSession.GET(url1).then {
+    URLSession.GET(url2)
 }.then {
-    NSURLSession.GET(url3)
+    URLSession.GET(url3)
 }
 </code></pre>
 
 <p>With:</p>
 
 <pre class="highlight plaintext"><code>firstly {
-    NSURLSession.GET(url1)
+    URLSession.GET(url1)
 }.then {
-    NSURLSession.GET(url2)
+    URLSession.GET(url2)
 }.then {
-    NSURLSession.GET(url3)
+    URLSession.GET(url3)
 }
 </code></pre>
 

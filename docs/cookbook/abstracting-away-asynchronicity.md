@@ -22,7 +22,7 @@ If we are still checking the user’s location, we don’t want the refresh to h
     if (self.updatingLocation) {
         self.refreshWhenDoneUpdatingLocation = YES;
     } else {
-        NSURLRequest *request = …
+        URLRequest *request = …
         [NSURLConnection sendAsynchronousRequest:… ^{
             [self.tableView reloadData];
         }];
@@ -53,7 +53,7 @@ Not too complicated. The code is understandable. However it would be simpler wit
 
 - (void)userDidPullRefresh {
     self.locationUpdater.then(^{
-        NSURL *url = …
+        URL *url = …
         return [NSURLConnection GET:url];
     }).catch(^{
         return [UIAlertView …].promise;
@@ -96,7 +96,7 @@ Suddenly your client wants a new feature. On ocassion they will push notify all 
     } else {
         self.refreshingWeather = YES;
 
-        NSURLRequest *request = …
+        URLRequest *request = …
         [NSURLConnection sendAsynchronousRequest:… ^{
             self.refreshingWeather = NO;            
             [self.tableView reloadData];
@@ -145,8 +145,8 @@ Yikes. Promises transform this code:
         return;
 
     self.refresher = self.locater.then(^(CLLocation *location){
-        NSURL *url = …
-        return [NSURLSession GET:url];
+        URL *url = …
+        return [URLSession GET:url];
     }).catch(^{
         return [UIAlertView …].promise;
     });

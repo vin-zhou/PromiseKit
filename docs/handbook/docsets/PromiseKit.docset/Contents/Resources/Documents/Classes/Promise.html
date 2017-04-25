@@ -503,7 +503,7 @@ to use instead: <code><a href="../Classes/Promise.html#/s:ZFC10PromiseKit7Promis
     <p class="aside-title">Returns</p>
     <p>A new promise that is resolved with the value returned from the provided closure. For example:</p>
 
-<p>NSURLSession.GET(url).then { data -&gt; Int in
+<p>URLSession.GET(url).then { data -&gt; Int in
       //…
       return data.length
   }.then { length in
@@ -1097,7 +1097,7 @@ delegating the error handling to the caller.</p>
 
 <p>The function you provide cannot mutate the chain.</p>
 
-<pre class="highlight plaintext"><code>NSURLSession.GET(/*…
+<pre class="highlight plaintext"><code>URLSession.GET(/*…
 </code></pre>
 
                       </div>
@@ -1213,7 +1213,7 @@ delegating the error handling to the caller.</p>
     <p class="aside-title">Returns</p>
     <p>A new promise that resolves when the <code><a href="../Classes/AnyPromise.html">AnyPromise</a></code> returned from the provided closure resolves. For example:</p>
 
-<p>NSURLSession.GET(url).then { (data: NSData) -&gt; AnyPromise in
+<p>URLSession.GET(url).then { (data: NSData) -&gt; AnyPromise in
       //…
       return SCNetworkReachability()
   }.then { _ in
