@@ -372,6 +372,28 @@ Swift demands functions with one purpose, thus we have two error handlers:
 
 You want `recover`.
 
+## When do promises “start”?
+
+Often people are confused about when Promises “start”. Is it immediately? Is it later? Is it when you call `then`?
+
+The answer is: promises *do not* choose when the underlying task they represent starts. That is up to that task. For example here is the code for a simple promise that wraps Alamofire:
+
+```swift
+func foo() -> Promise<Any>
+    return Promise { fulfill, reject in
+        Alamofire.request(rq).responseJSON { rsp in
+            if let error = rsp.error {
+                reject(error)
+            } else {
+                fulfill(rsp.value)
+            }
+        }
+    }
+}
+```
+
+Who chooses when this promise starts? The answer is: Alamofire does and in this case, it “starts” immediately when `foo()` is called.
+
 ## My question was not answered
 
 [Please open a ticket](https://github.com/mxcl/PromiseKit/issues/new).
