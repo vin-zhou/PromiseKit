@@ -13,7 +13,7 @@ redirect_from:
  - "/glossary/"
 ---
 
-## Why won’t my `then` compile?
+## Why won’t my `then`, `catch`, etc. compile?
 
 You’re seeing errors like:
 
@@ -359,7 +359,7 @@ We agree this is tedious, but other than specializing `when` for more parameter 
 [https://github.com/mxcl/PromiseKit/issues/484](https://github.com/mxcl/PromiseKit/issues/484)
 
 
-## How can I wait on a promise?
+## How can I wait (halting execution) on a promise?
 
 [https://github.com/yannickl/AwaitKit](https://github.com/yannickl/AwaitKit)
 
