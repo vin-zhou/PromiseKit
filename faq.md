@@ -89,6 +89,13 @@ Each is designed to be an approproate promise implementation for the strong poin
 
 Unlike most libraries we have extensive bridging support, you can use PromiseKit in mixed projects with mixed language targets and mixed language libraries.
 
+## I Read Online that PromiseKit is “heavy”
+
+Where? On some weekend-project promise implementation’s github? PromiseKit is 5 source files. Any perceived “heaviness” is perhaps due to its extensions for UIKit/CoreLocation etc. but these are all optional, so don’t
+use them if you don’t want to.
+
+Any perceived “heaviness” after that is 6 years of bug-fixes and battle-hardening.
+
 ## Which PromiseKit Should I Use?
 
 If you are writing a library, use [PromiseKit 1.x](https://github.com/mxcl/PromiseKit/tree/legacy-1.x). PromiseKit is built on Swift and thus breaks at least once a year. While Swift is in flux it is not feasible to depend on a library that will break every time Xcode updates.
