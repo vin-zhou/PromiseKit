@@ -67,8 +67,7 @@ PromiseKit, see [our documentation](Documentation/PromiseKitVersions.md).
 
 ---
 
-* [Common Misusages)](Documentation/CommonMisusage.md)
-* [Troubleshooting)](Documentation/Troubleshooting.md)
+* [Troubleshooting & Common Misusages](Documentation/Troubleshooting&CommonMisusage.md) (compiler errors & bad practices)
 * [Older & Newer PromiseKit Versions](Documentation/PromiseKitVersions.md) (including support for older or newer Swift versions).
 
 ---
