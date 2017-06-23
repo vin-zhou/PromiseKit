@@ -54,8 +54,8 @@ package.dependencies.append(
 Also you can just drop `PromiseKit.xcodeproj` into your project and then add
 `PromiseKit.framework` to your app’s embedded frameworks.
 
-If you need to use PromiseKit with an older Xcode or Swift or an older
-PromiseKit, see [our documentation](Documentation/PromiseKitVersions.md).
+[For older Xcode, Swift or
+PromiseKit versions, check here](Documentation/PromiseKitVersions.md).
 
 
 # Documentation
